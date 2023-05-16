@@ -2,7 +2,7 @@
 """pagination from a .csv file"""
 import csv
 import math
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -48,7 +48,7 @@ class Server:
         except IndexError:
             return []
 
-     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """
         Returns a page of the dataset.
         Args:
@@ -57,7 +57,8 @@ class Server:
         Returns:
             dict : The page of the dataset.
         """
-        total_pages = len(self.dataset()) // page_size + 1
+        total_pages = len(self.dataset()) // page_size 
+        total_pages = math.ceil(total_pages)
         data = self.get_page(page, page_size)
         info = {
             "page": page,
