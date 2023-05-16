@@ -57,8 +57,7 @@ class Server:
         Returns:
             dict : The page of the dataset.
         """
-        total_pages = len(self.dataset()) // page_size
-        total_pages = math.ceil(total_pages)
+        total_pages = len(self.dataset()) // page_size + 1
         data = self.get_page(page, page_size)
         info = {
             "page": page,
