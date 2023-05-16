@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+"""pagination from a .csv file"""
 import csv
 import math
 from typing import List, Tuple
@@ -33,12 +35,15 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            assert (page > 0 and isinstance(page, int))
-            assert (page_size > 0 and isinstance(page_size, int))
+        """ a method named get_page that takes two integer
+        arguments page with default value 1 and page_size
+        with default value 10"""
+        assert (page > 0 and isinstance(page, int))
+        assert (page_size > 0 and isinstance(page_size, int))
 
-            dataset = self.dataset()
-            try:
-                indexes = index_range(page, page_size)
-                return dataset[indexes[0]:indexes[1]]
-            except IndexError:
-                return []
+        dataset = self.dataset()
+        try:
+            indexes = index_range(page, page_size)
+            return dataset[indexes[0]:indexes[1]]
+        except IndexError:
+            return []
