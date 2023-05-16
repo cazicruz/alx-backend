@@ -5,7 +5,8 @@ BaseCaching = __import__('base_caching.py').Basecaching
 
 def class BasicCache(BaseCaching):
     """ceching class that inherits from BaseCeching"""
-    super.__init__():
+    def __init__(self):
+        super.__init__():
 
     def put(self, key, item):
         """ Add an item in the cache
