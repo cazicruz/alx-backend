@@ -4,8 +4,6 @@
 
 def class BasicCache(BaseCaching):
     """ceching class that inherits from BaseCeching"""
-    def __init__(self):
-        super.__init__()
 
     def put(self, key, item):
         """ Add an item in the cache
