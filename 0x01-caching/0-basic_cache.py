@@ -17,4 +17,5 @@ def class BasicCache(BaseCaching):
         self.cache_data.update({key:item})
 
     def get(self, key):
+        """ a method to get the value to thr key passed"""
         return self.cache_data.get(key)
