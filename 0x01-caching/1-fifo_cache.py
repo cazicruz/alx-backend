@@ -15,16 +15,13 @@ class FIFOCache(BaseCaching):
         """
         if key is None or item is None:
             return
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            if key not in self.cache_data:
-                for k in self.cache_data:
-                    if k == self.order_of_entrance[0]:
-                        self.cache_data.pop(k)
-                        self.order_of_entrance.pop(0)
-                        print("discard:",k)
-
         self.cache_data[key] = item
         self.order_of_entrance.append(key)
+
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            k = self.order_of_entrance.pop(0)
+            self.cache_data.pop(k)
+            print("discard:",k))
 
     def get(self, key):
         """Retrieves an item by key.
