@@ -16,11 +16,12 @@ class FIFOCache(BaseCaching):
         if key is None or item is None:
             return
         if len(self.cache_data) > Base.Caching.MAX_ITEMS:
-            for k in self.cache_data:
-                if k == self.order_of_entrance[0]:
-                    self.cache_data.pop(k)
-                    self.order_of_entrance.pop(0)
-                    print("discard:",k)
+            if key not in self.cache_data:
+                for k in self.cache_data:
+                    if k == self.order_of_entrance[0]:
+                        self.cache_data.pop(k)
+                        self.order_of_entrance.pop(0)
+                        print("discard:",k)
 
         self.cache_data[key] = item
         self.order_of_entrance.append(key)
