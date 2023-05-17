@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ caching task """
 from typing import Dict, Any
-BaseCaching = __import__('base_caching.py').BaseCaching
+from base_caching import BaseCaching
 
 
 def class BasicCache(BaseCaching):
@@ -13,7 +13,7 @@ def class BasicCache(BaseCaching):
         """ Add an item in the cache
         """
         if key is None or item is None:
-            break
+            return
         else:
             self.cache_data[key] = item
 
