@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ caching task """
-BaseCaching = __import__('base_caching.py').Basecaching
+BaseCaching = __import__('base_caching.py').BaseCaching
 
 
 def class BasicCache(BaseCaching):
