@@ -5,7 +5,7 @@ from collections import OrderedDict
 from base_caching import BaseCaching
 
 
-class FIFOCache(BaseCaching):
+class LIFOCache(BaseCaching):
     """last in first out queue logic for cache"""
     def __init__(self):
         """Initializes the cache.
