@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """ caching task """
+from typing import Dict, Any
 BaseCaching = __import__('base_caching.py').BaseCaching
 
 
@@ -8,7 +9,7 @@ def class BasicCache(BaseCaching):
     def __init__(self):
         super.__init__()
 
-    def put(self, key, item):
+    def put(self, key: str, item: Any):
         """ Add an item in the cache
         """
         if key is None or item is None:
@@ -16,7 +17,7 @@ def class BasicCache(BaseCaching):
         else:
             self.cache_data[key] = item
 
-    def get(self, key):
+    def get(self, key: str) -> Dict:
         """ a method to get the value to thr key passed"""
         if key in self.cache_data:
             return self.cache_data[key]
