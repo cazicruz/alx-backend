@@ -23,6 +23,7 @@ class FIFOCache(BaseCaching):
                     print("discard:",k)
 
         self.cache_data[key] = item
+        self.order_of_entrance.append(key)
 
     def get(self, key):
         """Retrieves an item by key.
