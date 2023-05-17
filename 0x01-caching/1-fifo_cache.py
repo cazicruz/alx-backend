@@ -15,7 +15,7 @@ class FIFOCache(BaseCaching):
         """
         if key is None or item is None:
             return
-        if len(self.cache_data) > Base.Caching.MAX_ITEMS:
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             if key not in self.cache_data:
                 for k in self.cache_data:
                     if k == self.order_of_entrance[0]:
