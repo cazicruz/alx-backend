@@ -4,7 +4,7 @@ from typing import Dict, Any
 from base_caching import BaseCaching
 
 
-def class BasicCache(BaseCaching):
+class BasicCache(BaseCaching):
     """ceching class that inherits from BaseCeching"""
     def __init__(self):
         super.__init__()
