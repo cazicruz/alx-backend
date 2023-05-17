@@ -12,10 +12,11 @@ def class BasicCache(BaseCaching):
         """ Add an item in the cache
         """
         if key is None or item is None:
-            breake
-
-        self.cache_data.update({key:item})
+            break
+        else:
+            self.cache_data.update({key:item})
 
     def get(self, key):
         """ a method to get the value to thr key passed"""
-        return self.cache_data.get(key)
+        if key in self.cache_data:
+            return self.cache_data.get(key)
