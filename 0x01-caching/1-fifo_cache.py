@@ -20,6 +20,7 @@ class FIFOCache(BaseCaching):
                 if k == self.order_of_entrance[0]:
                     self.cache_data.pop(k)
                     self.order_of_entrance.pop(0)
+                    print("discard:",k)
 
         self.cache_data[key] = item
 
