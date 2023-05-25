@@ -9,7 +9,8 @@ app.config['SECRET_KEY'] = "MYSECRETKEY"
 babal = Babel(app)
 
 @app.route('/')
-def index():
+def index() -> str:
+    """ returns the html template for the route"""
     return render_template('0-index.html')
 
 if __name__ == '__main__':
