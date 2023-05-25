@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ Flask app"""
-from flask import Flask, render_template, request, redirect, url_for,flash
+from flask import Flask, render_template, request, session, redirect, url_for,flash
 from flask_babel import Babel
 
 
@@ -14,7 +14,10 @@ class Config(object):
     babel.default_locale='en'
     babel.default_timezone='UTC'
 
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'[0]])
 
 @app.route('/')
 def index():
-    return render_template('1-index.html')
+    return render_template('2-index.html')
