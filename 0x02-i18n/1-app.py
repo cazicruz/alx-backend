@@ -9,6 +9,7 @@ app.config['SECRET_KEY'] = "MYSECRETKEY"
 basedir = os.path.abspath(os.path.dirname(__file__))
 babal = Babel(app)
 
+
 class Config(object):
     LANGUAGES = ["en", "fr"]
     babel.default_locale='en'
@@ -16,5 +17,10 @@ class Config(object):
 
 
 @app.route('/')
-def index():
+def index() -> str:
+    """ returns the html template for the view function"""
     return render_template('1-index.html')
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
